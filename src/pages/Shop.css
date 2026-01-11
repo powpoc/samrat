@@ -1,0 +1,317 @@
+/* Ethereal Shop Style */
+.shop-page {
+    padding-top: 140px;
+    min-height: 100vh;
+    padding-bottom: 4rem;
+}
+
+.shop-header-ethereal {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.shop-header-ethereal h1 {
+    margin-bottom: 0.5rem;
+    color: var(--color-brand-heading);
+    font-size: 3.5rem;
+}
+
+.shop-header-ethereal p {
+    color: var(--color-text-light);
+}
+
+/* Filter Sidebar & Layout */
+.shop-actions-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--color-glass-border);
+}
+
+.btn-filter-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-text-main);
+    font-weight: 600;
+}
+
+.sort-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.label-icon {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.sort-select {
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    border: 1px solid var(--color-pill-border);
+    background: transparent;
+    font-family: var(--font-body);
+    color: var(--color-text-main);
+    outline: none;
+    cursor: pointer;
+    min-width: 140px;
+}
+
+.sort-select option {
+    background-color: var(--color-bg-1);
+    color: var(--color-text-main);
+}
+
+.shop-layout {
+    display: flex;
+    gap: 3rem;
+    position: relative;
+    align-items: flex-start;
+}
+
+/* Sidebar Styles */
+.shop-sidebar {
+    width: 250px;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+    opacity: 1;
+    visibility: visible;
+}
+
+.shop-sidebar.closed {
+    width: 0;
+    opacity: 0;
+    visibility: hidden;
+    overflow: hidden;
+    margin-right: 0;
+}
+
+.sidebar-section {
+    margin-bottom: 2.5rem;
+}
+
+.sidebar-section h3 {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-text-main);
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--color-glass-border);
+    padding-bottom: 0.5rem;
+}
+
+.filter-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.filter-item {
+    text-align: left;
+    padding: 0.5rem 0;
+    color: var(--color-text-light);
+    font-size: 0.95rem;
+    transition: color 0.2s;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.filter-item:hover,
+.filter-item.active {
+    color: var(--color-accent);
+    font-weight: 600;
+}
+
+/* Color Grid in Sidebar */
+.color-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+}
+
+.color-dot-btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid transparent;
+    /* Selection border */
+    padding: 2px;
+    /* Space for border */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.color-dot-btn:hover {
+    transform: scale(1.1);
+}
+
+.color-dot-btn.active {
+    border-color: var(--color-text-main);
+}
+
+[data-theme="dark"] .color-dot-btn.active {
+    border-color: #fff;
+}
+
+.color-dot {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.color-dot.all {
+    background: linear-gradient(45deg, #FFD700, #000);
+}
+
+.btn-reset-sidebar {
+    margin-top: 2rem;
+    font-size: 0.85rem;
+    text-decoration: underline;
+    color: var(--color-text-light);
+}
+
+.shop-main-content {
+    flex: 1;
+}
+
+/* Grid Override */
+.shop-grid-ethereal {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 cols when sidebar is present */
+    gap: 2rem;
+}
+
+.shop-sidebar.closed~.shop-main-content .shop-grid-ethereal {
+    grid-template-columns: repeat(4, 1fr);
+    /* Back to 4 when closed */
+}
+
+.no-results {
+    text-align: center;
+    grid-column: 1 / -1;
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    color: var(--color-text-light);
+}
+
+@media (max-width: 900px) {
+    .shop-layout {
+        display: block;
+    }
+
+    .shop-sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        background: var(--color-bg-1);
+        z-index: 1000;
+        padding: 2rem;
+        width: 300px;
+        box-shadow: 10px 0 30px rgba(0, 0, 0, 0.1);
+        transform: translateX(0);
+        overflow-y: auto;
+    }
+
+    .shop-sidebar.closed {
+        width: 300px;
+        /* Keep width but slide out */
+        transform: translateX(-100%);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .shop-grid-ethereal {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+/* Price Filter Styles */
+.price-filter {
+    padding: 0 0.5rem;
+}
+
+.price-display {
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+    color: var(--color-text-main);
+    font-weight: 500;
+}
+
+.price-slider {
+    width: 100%;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    accent-color: var(--color-accent);
+}
+
+.price-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: var(--color-text-light);
+}
+
+
+/* Updated Price Input Styles */
+.price-inputs {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.price-input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid var(--color-pill-border);
+    border-radius: 8px;
+    background: transparent;
+    color: var(--color-text-main);
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.price-input:focus {
+    outline: none;
+    border-color: var(--color-accent);
+}
+
+.price-separator {
+    color: var(--color-text-light);
+    font-weight: bold;
+}
+
+
+/* Slider Fix */
+.price-slider-container {
+    padding: 0 0.5rem;
+}
+
+.price-slider {
+    width: 100%;
+    margin: 0;
+    cursor: pointer;
+    accent-color: var(--color-accent);
+}
+

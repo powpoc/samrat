@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css2?family=Galada&family=Tiro+Bangla:ital@0;1&family=Philosopher:ital,wght@0,400;0,700;1,400&family=Mulish:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+:root {
+  /* ETHEREAL LUXURY PALETTE - LIGHT (Default) */
+  --color-bg-1: #FDFBF7;
+  --color-bg-2: #F5E6D3;
+  --color-text-main: #3E3228;
+  /* Deep Sepia */
+  --color-text-light: #8A7B6E;
+
+  --color-accent: #CFA472;
+  /* Muted Gold */
+  --color-accent-transparent: rgba(207, 164, 114, 0.2);
+
+  /* Glass Variables */
+  --color-glass: rgba(255, 255, 255, 0.75);
+  --color-glass-border: rgba(255, 255, 255, 0.5);
+  --glass-shadow-color: rgba(62, 50, 40, 0.05);
+
+  /* Typography */
+  --font-heading: 'Philosopher', serif;
+  --font-body: 'Mulish', sans-serif;
+
+  --glass-shadow: 0 8px 32px 0 var(--glass-shadow-color);
+  --glass-blur: blur(12px);
+  --radius-lg: 24px;
+  --radius-md: 16px;
+  --radius-sm: 8px;
+
+  /* Dynamic Brand Colors (Light Mode Default) */
+  --color-brand-heading: #3E3228;
+  --color-brand-btn-bg: #3E3228;
+  --color-brand-btn-text: #FFFFFF;
+}
+
+[data-theme="dark"] {
+  /* DARK LUXURY PALETTE - Refined based on screenshot */
+  --color-bg-1: #111111;
+  /* Very dark charcoal/black */
+  --color-bg-2: #1A1A1A;
+  /* Slightly lighter for gradient */
+  --color-text-main: #FFFFFF;
+  /* Pure white for maximum contrast */
+  --color-text-light: #B0B0B0;
+  /* Light grey for secondary text */
+
+  --color-accent: #FFD700;
+  /* Rich Gold */
+  --color-accent-text: #000000;
+  /* Text color on top of gold accent */
+  --color-accent-transparent: rgba(255, 215, 0, 0.15);
+
+  /* Dark Glass Variables */
+  --color-glass: rgba(25, 25, 25, 0.9);
+  /* Darker, less transparent for visibility */
+  --color-glass-border: rgba(255, 215, 0, 0.1);
+  --glass-shadow-color: rgba(0, 0, 0, 0.5);
+
+  --color-pill-bg: #222222;
+  --color-pill-border: #333333;
+  --color-pill-bg: #222222;
+  --color-pill-border: #333333;
+
+  /* Dynamic Brand Colors (Dark Mode Override) */
+  --color-brand-heading: #FFD700;
+  --color-brand-btn-bg: #FFD700;
+  --color-brand-btn-text: #000000;
+}
+
+:root {
+  /* ... (Light variables remain similar but adding explicit accent-text) */
+  --color-accent-text: #3E3228;
+  --color-pill-bg: rgba(255, 255, 255, 0.5);
+  --color-pill-border: rgba(62, 50, 40, 0.1);
+}
+
+.nav-logo {
+  color: var(--color-brand-heading) !important;
+  /* Force logo to be Gold/Accent in both modes if desired, but image shows Gold logo in dark mode. In light mode it was separat, let's keep it dynamic or force it? */
+}
+
+[data-theme="dark"] .nav-logo {
+  color: var(--color-accent) !important;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  background: radial-gradient(circle at 50% 0%, var(--color-bg-2) 0%, var(--color-bg-1) 100%);
+  color: var(--color-text-main);
+  transition: background 0.5s ease, color 0.5s ease;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: clamp(3rem, 6vw, 5rem);
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* Global Glass Utilities */
+.glass-panel {
+  background: var(--color-glass);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--color-glass-border);
+  box-shadow: var(--glass-shadow);
+  border-radius: var(--radius-lg);
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section {
+  padding: 6rem 0;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  transition: all 0.3s ease;
+}
+
+.btn-lg {
+  padding: 1.2rem 3rem;
+  font-size: 1.1rem;
+}
+
+.btn-primary {
+  background-color: var(--color-brand-btn-bg);
+  color: var(--color-brand-btn-text);
+  box-shadow: 0 10px 20px rgba(62, 50, 40, 0.15);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 25px rgba(62, 50, 40, 0.2);
+  filter: brightness(1.1);
+}
+
+.btn-outline {
+  border: 2px solid var(--color-text-main);
+  color: var(--color-text-main);
+}
+
+.btn-outline:hover {
+  background-color: var(--color-text-main);
+  color: var(--color-bg-1);
+  /* Invert text color to background for contrast */
+  transform: translateY(-2px);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-accent);
+  border-radius: 10px;
+}
+
+/* Bengali Font Utility */
+body.font-bengali {
+  font-family: 'Tiro Bangla', serif !important;
+}
+
+body.font-bengali h1,
+body.font-bengali h2,
+body.font-bengali h3,
+body.font-bengali h4,
+body.font-bengali .nav-logo {
+  font-family: 'Galada', cursive !important;
+  line-height: 1.5;
+}
+
+/* Force generic family to prevent English fallbacks from overriding style if mixed */
+body.font-bengali h1,
+body.font-bengali h2,
+body.font-bengali h3,
+body.font-bengali h4 {
+  font-family: 'Galada', serif !important;
+}
+
+
+/* WhatsApp Floating Button */
+.whatsapp-float-btn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 60px;
+  height: 60px;
+  background-color: #25D366;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.whatsapp-float-btn:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+.whatsapp-float-btn svg {
+  width: 32px;
+  height: 32px;
+}
+
+@media (max-width: 768px) {
+  .whatsapp-float-btn {
+    bottom: 5.5rem;
+    /* Above mobile nav/footer if needed, or higher to avoid overlapping */
+    right: 1.5rem;
+    width: 50px;
+    height: 50px;
+  }
+
+  .whatsapp-float-btn svg {
+    width: 28px;
+    height: 28px;
+  }
+}

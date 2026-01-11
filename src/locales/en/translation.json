@@ -1,0 +1,63 @@
+{
+    "nav": {
+        "home": "Home",
+        "shop": "Shop",
+        "offer": "Offer",
+        "story": "Story"
+    },
+    "home": {
+        "subtitle": "Royal Heritage Collection",
+        "title": "Legacy of Kings",
+        "description": "Adorn yourself in the timeless grandeur of the Mughal era. Exquisite craftsmanship meets modern luxury in every stitch.",
+        "explore": "Explore Collection",
+        "ourstory": "Our Story",
+        "majestic": "Majestic Collection"
+    },
+    "shop": {
+        "title": "Collection",
+        "subtitle": "Explore our curated selection of heritage wear.",
+        "showFilters": "Show Filters",
+        "hideFilters": "Hide Filters",
+        "sort": "Sort:",
+        "newest": "Newest",
+        "priceLow": "Price: Low to High",
+        "priceHigh": "Price: High to Low",
+        "category": "Category",
+        "color": "Color",
+        "priceRange": "Price Range",
+        "upTo": "Up to",
+        "resetAll": "Reset All",
+        "noResults": "No products match your criteria.",
+        "resetFilters": "Reset Filters"
+    },
+    "categories": {
+        "all": "All",
+        "sherwani": "Sherwani",
+        "punjabi": "Punjabi",
+        "coaty": "Coaty",
+        "offer": "Offer"
+    },
+    "footer": {
+        "tagline": "Weaving heritage into the fabric of modern life.",
+        "titles": {
+            "shop": "Shop",
+            "support": "Support",
+            "connect": "Connect"
+        },
+        "links": {
+            "shipping": "Shipping & Returns",
+            "sizeGuide": "Size Guide",
+            "contact": "Contact Us",
+            "faq": "FAQ",
+            "privacy": "Privacy Policy",
+            "terms": "Terms of Service"
+        },
+        "rights": "© 2025 Samrat Couture. All rights reserved."
+    },
+    "story": {
+        "title": "MANIFESTO MMXXV",
+        "heading": "WE REJECT AVERAGE.",
+        "p1": "SAMRAT IS NOT JUST CLOTHING. IT IS A VISUAL DIALECT FOR THE MODERN SOVEREIGN. WE TAKE THE ANCIENT BLUEPRINTS OF SHERWANIS AND KURTAS AND INJECT THEM WITH HIGH-VOLTAGE CONTEMPORARY ENERGY.",
+        "p2": "NO COMPROMISE. NO SUBTLETY. JUST PURE, UNADULTERATED STYLE."
+    }
+}

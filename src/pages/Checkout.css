@@ -1,0 +1,267 @@
+.checkout-page {
+    padding-top: 4rem;
+    /* Navbar height */
+    padding-bottom: 4rem;
+}
+
+.checkout-title {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-family: var(--font-heading);
+    color: var(--color-brand-heading);
+}
+
+.checkout-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 3rem;
+}
+
+.checkout-form-section,
+.summary-card {
+    background: white;
+    padding: 2rem;
+    border-radius: var(--radius-md);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 0.5rem;
+}
+
+.section-header h2 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--color-text-main);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: var(--font-body);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-accent);
+}
+
+.mt-4 {
+    margin-top: 2rem;
+}
+
+/* Summary Styles */
+.summary-card h3 {
+    margin-bottom: 1.5rem;
+    font-family: var(--font-heading);
+}
+
+.summary-items {
+    max-height: 300px;
+    overflow-y: auto;
+    margin-bottom: 1.5rem;
+    padding-right: 0.5rem;
+}
+
+.summary-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.item-img {
+    position: relative;
+    width: 60px;
+    height: 75px;
+}
+
+.item-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.item-qty {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: #666;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    font-size: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.item-info {
+    flex: 1;
+}
+
+.item-info h4 {
+    font-size: 0.95rem;
+    margin-bottom: 0.2rem;
+}
+
+.item-info p {
+    font-size: 0.8rem;
+    color: #666;
+    margin: 0;
+}
+
+.item-price {
+    font-weight: 600;
+}
+
+.summary-pricing {
+    border-top: 2px solid #eee;
+    padding-top: 1rem;
+}
+
+.price-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.price-row.total {
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    color: var(--color-brand-heading);
+}
+
+.price-row.discount {
+    color: #2e7d32;
+}
+
+/* Payment Method */
+.payment-method {
+    margin: 1.5rem 0;
+    background: #f9f9f9;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid #eee;
+}
+
+.payment-method h4 {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.payment-option.selected {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: white;
+    padding: 1rem;
+    border-radius: 6px;
+    border: 1px solid var(--color-accent);
+}
+
+.radio-circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid var(--color-accent);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inner-circle {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--color-accent);
+}
+
+.pay-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.pay-title {
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.pay-desc {
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.order-btn {
+    width: 100%;
+    background: #25D366;
+    /* WhatsApp Green */
+    color: white;
+}
+
+.order-btn:hover {
+    background: #128C7E;
+    color: white;
+}
+
+.secure-text {
+    text-align: center;
+    font-size: 0.8rem;
+    color: #888;
+    margin-top: 0.5rem;
+}
+
+.checkout-empty {
+    text-align: center;
+    padding: 5rem 0;
+}
+
+@media (max-width: 768px) {
+    .checkout-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .checkout-form-section {
+        /* Order summary first on mobile usually? Actually form first is standard */
+        order: 1;
+    }
+
+    .checkout-summary-section {
+        order: 2;
+    }
+}
